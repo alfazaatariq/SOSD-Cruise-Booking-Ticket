@@ -5,9 +5,9 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './payment.css';
 import { ErrorPage } from './ErrorPage';
-import img3 from '../assets/logo.png'
-import img4 from '../assets/CS.png'
-import {FaMoneyBillWave} from 'react-icons/fa'
+import img3 from '../assets/logo.png';
+import img4 from '../assets/CS.png';
+import { FaMoneyBillWave } from 'react-icons/fa';
 
 const PaymentPage = () => {
   const [detailTicket, setDetailTicket] = useState('');
@@ -46,75 +46,65 @@ const PaymentPage = () => {
     nav(`/invoicedetail-${data._id}`);
   }
 
-  try {
-    return (
-      <>
-        <Navbar />
-        <section className='formPage'>
-          <div class="container3">
-
-            <div onSubmit={(e) => onSubmitHandler(e)} class="card-container">
-              <div class="left">
-                <div class="left-container">
-                  <FaMoneyBillWave className='icon'/>
+  return (
+    <>
+      <Navbar />
+      <section className='formPage'>
+        <div class='container3'>
+          <form onSubmit={(e) => onSubmitHandler(e)}>
+            <div class='card-container'>
+              <div class='left'>
+                <div class='left-container'>
+                  <FaMoneyBillWave className='icon' />
                   <h2>Pilih Bank :</h2>
                   <div className='opsi'>
-                  <img src={img3}></img>
-                  <input className='radioBtn'
-                        type='radio'
-                        name='permata'
-                        id='permata'
-                        value='permata'
-                        onChange={(e) => setBank(e.target.value)}
-                        required
-                      />
+                    <img src={img3}></img>
+                    <input
+                      className='radioBtn'
+                      type='radio'
+                      name='permata'
+                      id='permata'
+                      value='permata'
+                      onChange={(e) => setBank(e.target.value)}
+                      required
+                    />
                   </div>
                   <div className='opsi'>
-                  <img className='img4' src={img4}></img>
-                  <input className='radioBtn2'
-                        type='radio'
-                        disabled
-                      />
+                    <img className='img4' src={img4}></img>
+                    <input className='radioBtn2' type='radio' disabled />
                   </div>
                   <div className='opsi'>
-                  <img className='img5' src={img4}></img>
-                  <input className='radioBtn3'
-                        type='radio'
-                        disabled
-                      />
+                    <img className='img5' src={img4}></img>
+                    <input className='radioBtn3' type='radio' disabled />
                   </div>
                   <div className='opsi'>
-                  <img className='img6' src={img4}></img>
-                  <input className='radioBtn4'
-                        type='radio'
-                        disabled
-                      />
+                    <img className='img6' src={img4}></img>
+                    <input className='radioBtn4' type='radio' disabled />
                   </div>
                 </div>
               </div>
 
-              <div class="right">
-                <div class="right-container">
-                  <form>
-                    <h2 class="lg-view">Total jumlah pembayaran :</h2>
-                    <h2 class="sm-view">Total jumlah pembayaran :</h2>
-                    <h2 class="lg-view">Rp{detailTicket.total_harga}</h2>
-                    <h2 class="sm-view">Rp{detailTicket.total_harga}</h2>
-                    
-                    <input className='btnPP' type='submit' value='Bayar' />
-                  </form>
+              <div class='right'>
+                <div class='right-container'>
+                  <h2 class='lg-view'>Total jumlah pembayaran :</h2>
+                  <h2 class='sm-view'>Total jumlah pembayaran :</h2>
+                  <h2 class='lg-view'>Rp{detailTicket.total_harga}</h2>
+                  <h2 class='sm-view'>Rp{detailTicket.total_harga}</h2>
+
+                  <input className='btnPP' type='submit' value='Bayar' />
                 </div>
               </div>
             </div>
-
-          </div>
-        </section>
-        <Footer/>
-      </>
-    );
-  } catch (error) {
-    return <ErrorPage />;
-  }
+          </form>
+        </div>
+      </section>
+      <Footer />
+    </>
+  );
+  // try {
+  // } catch (error) {
+  //   return <ErrorPage />;
+  // }
 };
 
 export default PaymentPage;

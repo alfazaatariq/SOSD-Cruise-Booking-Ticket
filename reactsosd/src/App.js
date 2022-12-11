@@ -14,6 +14,7 @@ import { AdminPage } from './pages/AdminPage';
 import { AdminLoginPage } from './pages/AdminLoginPage';
 import { AdminRegisterPage } from './pages/AdminRegisterPage';
 import './app.css';
+import ErrorBoundary from './components/ErrorBoundary';
 
 export const DataContext = createContext();
 
@@ -39,7 +40,11 @@ function App() {
         <Route path='/search-ticket/ticket-:id' element={<FormPage />}></Route>
         <Route
           path='/search-ticket/ticket/payment-:id'
-          element={<PaymentPage />}
+          element={
+            <ErrorBoundary>
+              <PaymentPage />
+            </ErrorBoundary>
+          }
         ></Route>
         {/* <Route path='/order' element={<OrderPage />}></Route> */}
         <Route path='/about' element={<AboutPage />}></Route>
