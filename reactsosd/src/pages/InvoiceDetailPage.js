@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import { RiCheckboxBlankCircleFill } from 'react-icons/ri';
 import { PDFFile } from '../components/PDFFile';
 import { PDFDownloadLink } from '@react-pdf/renderer';
-import './invoice.css'
+import './invoice.css';
 import Footer from '../components/Footer/Footer';
 
 export const InvoiceDetailPage = () => {
@@ -32,14 +32,13 @@ export const InvoiceDetailPage = () => {
       <>
         <Navbar />
         <div className='containerIDP'>
-        <div className='textIDP'>
-          <h1 className='h1IDP'>INVOICE DETAIL</h1>
-          <h1 className='h1IDP2'>VA Number : {status.permata_va_number}</h1>
-        </div>
-        
+          <div className='textIDP'>
+            <h1 className='h1IDP'>INVOICE DETAIL</h1>
+            <h1 className='h1IDP2'>VA Number : {status.permata_va_number}</h1>
+          </div>
 
-        <table className='tableIDP'>
-          <tr className='trIDP' id="header">
+          <table className='tableIDP'>
+            <tr className='trIDP' id='header'>
               <th className='thIDP'>Order_id</th>
               <th className='thIDP'>User_id</th>
               <th className='thIDP'>Asal</th>
@@ -55,8 +54,8 @@ export const InvoiceDetailPage = () => {
               <th className='thIDP'>Total Harga</th>
               <th className='thIDP'>Action</th>
               <th className='thIDP'>Status</th>
-          </tr>
-          <tr className='trIDP'>
+            </tr>
+            <tr className='trIDP'>
               <td className='tdIDP'>{invoice[0].order_id}</td>
               <td className='tdIDP'>{invoice[0].user_id}</td>
               <td className='tdIDP'>{invoice[0].asal}</td>
@@ -72,30 +71,54 @@ export const InvoiceDetailPage = () => {
               <td className='tdIDP'>{invoice[0].total_harga} </td>
               <td className='tdIDP'>
                 <PDFDownloadLink
-          document={<PDFFile invoice={invoice} />}
-          fileName={`Tiket-${invoice[0].order_id}`}
-        >
-          {({ loading }) =>
-            loading ? <button>Loading...</button> : <button className='btnIDP'>Download</button>
-          }
-        </PDFDownloadLink></td>
-              <td className='tdIDP'> <h3>
-          {status.transaction_status}{' '}
-          <RiCheckboxBlankCircleFill
-            color={
-              status.transaction_status === 'pending'
-                ? 'grey'
-                : status.transaction_status === 'settlement'
-                ? 'green'
-                : 'red'
-            }
-          />
-        </h3> </td>
-          </tr>
-        </table>
+                  document={<PDFFile invoice={invoice} />}
+                  fileName={`Tiket-${invoice[0].order_id}`}
+                >
+                  {
+                    status.transaction_status !== 'settlement'
+                      ? ({ loading }) =>
+                          loading ? (
+                            <button disabled>Loading...</button>
+                          ) : (
+                            <button disabled className='btnIDP'>
+                              Complete The payment to download the ticket
+                            </button>
+                          )
+                      : ({ loading }) =>
+                          loading ? (
+                            <button>Loading...</button>
+                          ) : (
+                            <button className='btnIDP'>Download</button>
+                          )
+
+                    // ({ loading }) =>
+                    //   loading ? (
+                    //     <button>Loading...</button>
+                    //   ) : (
+                    //     <button className='btnIDP'>Download</button>
+                    //   )
+                  }
+                </PDFDownloadLink>
+              </td>
+              <td className='tdIDP'>
+                {' '}
+                <h3>
+                  {status.transaction_status}{' '}
+                  <RiCheckboxBlankCircleFill
+                    color={
+                      status.transaction_status === 'pending'
+                        ? 'grey'
+                        : status.transaction_status === 'settlement'
+                        ? 'green'
+                        : 'red'
+                    }
+                  />
+                </h3>{' '}
+              </td>
+            </tr>
+          </table>
         </div>
-        <Footer/>
-        
+        <Footer />
       </>
     );
   }
