@@ -4,7 +4,6 @@ import { userAddInvoice, orderTicket } from '../utils/functions';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './payment.css';
-import { ErrorPage } from './ErrorPage';
 import img3 from '../assets/logo.png';
 import img4 from '../assets/CS.png';
 import { FaMoneyBillWave } from 'react-icons/fa';
@@ -101,10 +100,6 @@ const PaymentPage = () => {
       <Footer />
     </>
   );
-  // try {
-  // } catch (error) {
-  //   return <ErrorPage />;
-  // }
 };
 
 export default PaymentPage;
