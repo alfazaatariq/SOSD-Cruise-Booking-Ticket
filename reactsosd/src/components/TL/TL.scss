@@ -1,0 +1,167 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(
+      to right,
+      hsl(187, 85%, 43%),
+      hsl(199, 100%, 33%)
+    );
+    --whiteColor: hsl(0, 0%, 100%);
+    --whiteColor2: rgba(253, 246, 246, 0.76);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 235);
+}
+
+.listContainer{
+  margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.lsTitle{
+    font-size: 20px;
+    margin: 10px 100px;
+}
+
+.tgl{
+    margin: 10px 100px;
+}
+
+.penumpang{
+    margin: 10px 100px;
+}
+
+
+  .listTiket{
+    display: grid;
+    grid-template-columns: repeat(1,3fr);
+    width: 70%;
+    gap: 3rem;
+    margin:10px;
+    position: static;
+  }
+
+  .kuota{
+    margin: 7px 10px;
+    color: var(--textColor);
+    margin: 15px 20px;
+  }
+
+  .jam{
+    font-size: 15px;
+    margin: 20px 100px;
+  }
+
+  .lsTitle2{
+    font-size: 15px;
+    margin: 20px 100px;
+}
+
+.tgl2{
+    margin: 15px 100px;
+    font-size: 15px;
+}
+
+.komen{
+  margin-top: 20px;
+}
+
+.listSearch2{
+    width: 100%;
+    background-color: var(--whiteColor);
+    border: thin solid rgb(107, 52, 158) ;
+    box-shadow: 1px 1px 5px 1px lightblue;
+    padding: 10px;
+    position: sticky;
+    top: 10px;
+    border: none;
+}
+
+.btnOrder{
+  position: absolute;
+  background:var(--gradientColor);
+  width: 80%;
+  column-gap: .8rem;
+  padding: 5px 1rem;
+  border-radius: 3rem;
+  left: 50%;
+  transform: translate(-50%);
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: var(--whiteColorDeam);
+
+  &:hover{
+      background:var(--PrimaryColor);
+  }
+}
+
+  .harga{
+    width: 300px;
+    bottom: 30px;
+    left: 850px;
+    height: 120px;
+    border-radius: 25px;
+    position: absolute;
+    font-size: 30px;
+    color:var(--textColor);
+    font-weight: bold;
+  }
+
+  
+@media screen and (max-width:500px) {
+
+  .harga{
+    top: 30px;
+    left: 180px;
+    font-size: 20px;
+  }
+  .jam{
+    font-size: 15px;
+    margin: 20px 10px;
+  }
+
+  .lsTitle2{
+    font-size: 15px;
+    margin: 20px 10px;
+}
+
+.tgl2{
+    margin: 15px 10px;
+    font-size: 15px;
+}
+}
+
+@media screen and (min-width:1024px) {
+  .btnOrder{
+    width: 20%;
+    left: 75%;
+    top: 70%;
+  }
+  .harga{
+    left: 760px;
+  }
+  .jam{
+    font-size: 15px;
+    margin: 20px 100px;
+  }
+
+  .lsTitle2{
+    font-size: 15px;
+    margin: 20px 100px;
+}
+
+.tgl2{
+    margin: 15px 100px;
+    font-size: 15px;
+}
+}

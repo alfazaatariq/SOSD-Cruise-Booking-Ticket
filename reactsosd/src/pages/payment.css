@@ -1,0 +1,221 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
+  --whiteColor: hsl(0, 0%, 100%);
+  --whiteColor2: rgba(253, 246, 246, 0.76);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+}
+
+.formPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 10px;
+  height: 100vh;
+  margin: 0px 0 0px;
+  padding: 10px;
+}
+
+.container3 {
+  background-color: var(--whiteColor);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 69%;
+  margin-top: 5%;
+}
+
+.card-container {
+  display: flex;
+}
+
+.right {
+  padding-top: 30px;
+  display: flex;
+  flex: 3;
+  height: 600px;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  border-right: 1px solid var(--bodyColor);
+  display: flex;
+  flex: 1;
+  height: 532px;
+  justify-content: center;
+  align-items: center;
+  color: var(--blackColor);
+}
+
+.left-container {
+  height: 77.5%;
+  width: 80%;
+  text-align: center;
+  line-height: 22px;
+}
+
+.left-container .icon {
+  margin-right: 300px;
+}
+
+.left-container img {
+  width: 50%;
+  display: flex;
+  grid-template-columns: repeat(1, 2fr);
+}
+
+.opsi {
+  margin-top: 30px;
+  margin-bottom: 26px;
+}
+.left-container .radioBtn {
+  width: 2%;
+  height: 18px;
+  right: 80%;
+  top: 34%;
+  position: absolute;
+}
+
+.left-container .img4 {
+  top: 34%;
+  left: 1.5%;
+  position: absolute;
+  width: 11%;
+}
+
+.left-container .img5 {
+  top: 47%;
+  left: 1.5%;
+  position: absolute;
+  width: 11%;
+}
+
+.radioBtn2 {
+  width: 2%;
+  height: 18px;
+  right: 80%;
+  top: 47%;
+  position: absolute;
+}
+
+.radioBtn3 {
+  width: 2%;
+  height: 18px;
+  right: 80%;
+  top: 60%;
+  position: absolute;
+}
+
+.left-container .img6 {
+  top: 60%;
+  left: 1.5%;
+  position: absolute;
+  width: 11%;
+}
+
+.radioBtn4 {
+  width: 2%;
+  height: 18px;
+  right: 80%;
+  top: 73%;
+  position: absolute;
+}
+
+.left h2 {
+  margin-bottom: 0.9rem;
+  padding-bottom: 1rem;
+}
+
+.left-container .rp {
+  font-size: 25px;
+  padding-top: 20px;
+  font-weight: 800;
+}
+
+.left p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.right-container {
+  width: 70%;
+  height: 55%;
+  text-align: center;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  border: 2px solid var(--bodyColor);
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid #00b4cf;
+}
+
+.btnPP {
+  margin-top: 10px;
+  border-radius: 20px;
+  border: 1px solid #00b4cf;
+  background-color: #00b4cf;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-out;
+  cursor: pointer;
+  width: 80%;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+textarea {
+  height: 90px;
+}
+
+@media only screen and (max-width: 600px) {
+  .left {
+    display: none;
+  }
+
+  .lg-view {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sm-view {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=formpage.css.map */

@@ -1,0 +1,102 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(
+      to right,
+      hsl(187, 85%, 43%),
+      hsl(199, 100%, 33%)
+    );
+    --whiteColor: hsl(0, 0%, 100%);
+    --whiteColor2: rgba(253, 246, 246, 0.76);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 235);
+}
+
+.cardDiv{
+    padding: 0rem 2rem;
+}
+.forms{
+    position: relative;
+    padding: 2rem 1rem;
+    background:var(--whiteColor2);
+    border-radius: 10px;
+    gap: 1rem;
+    width: 10%;
+
+    label{
+        display: block;
+        color: var(--textColor);
+        padding-bottom: 10px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .input{
+        height: 40px;
+        padding: 0 1rem;
+        background:var(--inputColor);
+        border-radius: 3rem;
+        margin-bottom: 20px;
+
+        select, input{
+            background: none;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 13px;
+            font-weight: 500;
+            &::placeholder{
+                font-size: 13px;
+            }
+        }
+
+        .icon{
+            font-size: 18px;
+            color: var(--PrimaryColor)
+            !important;
+            margin-left: 10px;
+        }
+    }
+    .btnSearch{
+        position: absolute;
+        background:var(--gradientColor);
+        width: max-content;
+        bottom: -1rem;
+        column-gap: .8rem;
+        padding: 5px 1rem;
+        border-radius: 3rem;
+        left: 50%;
+        transform: translate(-50%);
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        font-size: 15px;
+        color: var(--whiteColorDeam);
+
+        &:hover{
+            background:var(--PrimaryColor);
+        }
+    }
+    
+}
+
+
+
+@media screen and (min-width:500px) {
+    .forms{
+        width: 60%;
+    }
+}
+
+@media screen and (min-width:360px) {
+    .forms{
+        width: 60%;
+    }
+}

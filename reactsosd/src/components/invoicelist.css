@@ -1,0 +1,134 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
+  --whiteColor: hsl(0, 0%, 100%);
+  --whiteColor2: rgba(253, 246, 246, 0.76);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+}
+
+.containerIL {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.listIL {
+  display: grid;
+  grid-template-columns: repeat(1, 3fr);
+  width: 70%;
+  gap: 3rem;
+  margin: 10px;
+  position: static;
+}
+
+.titleIL {
+  margin: 7px 10px;
+  color: var(--textColor);
+  margin: 15px 20px;
+}
+
+.jamIL,
+.namaIL,
+.jumlahIL {
+  font-size: 15px;
+  margin: 20px 100px;
+}
+
+.lsTitle2IL {
+  font-size: 15px;
+  margin: 20px 100px;
+}
+
+.tglIL {
+  margin: 15px 100px;
+  font-size: 15px;
+}
+
+.btnIL {
+  border-collapse: collapse;
+  border: 1px solid #bdc3c7;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), -1px -1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btnIL:hover {
+  background-color: #f5f5f5;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.listIL2 {
+  width: 100%;
+  background-color: var(--whiteColor);
+  border: thin solid rgb(107, 52, 158);
+  box-shadow: 1px 1px 5px 1px lightblue;
+  padding: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  border: none;
+}
+
+.hargaIL {
+  width: 300px;
+  bottom: 30px;
+  left: 800px;
+  height: 120px;
+  border-radius: 25px;
+  position: absolute;
+  font-size: 30px;
+  color: var(--textColor);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .harga {
+    top: 30px;
+    left: 180px;
+    font-size: 20px;
+  }
+  .jam {
+    font-size: 15px;
+    margin: 20px 10px;
+  }
+  .lsTitle2 {
+    font-size: 15px;
+    margin: 20px 10px;
+  }
+  .tgl2 {
+    margin: 15px 10px;
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .btnOrder {
+    width: 20%;
+    left: 75%;
+    top: 70%;
+  }
+  .harga {
+    left: 760px;
+  }
+  .jam {
+    font-size: 15px;
+    margin: 20px 100px;
+  }
+  .lsTitle2 {
+    font-size: 15px;
+    margin: 20px 100px;
+  }
+  .tgl2 {
+    margin: 15px 100px;
+    font-size: 15px;
+  }
+} /*# sourceMappingURL=TL.css.map */
