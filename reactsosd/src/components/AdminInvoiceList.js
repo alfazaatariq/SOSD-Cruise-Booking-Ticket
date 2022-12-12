@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -11,6 +11,8 @@ import {
   updateInvoiceById,
   adminAddInvoice,
 } from '../utils/functions';
+import { Container } from 'react-bootstrap';
+import { View } from '@react-pdf/renderer';
 
 export const AdminInvoiceList = () => {
   const [invoices, setInvoices] = useState('');
@@ -128,16 +130,18 @@ export const AdminInvoiceList = () => {
 
   if (invoices) {
     return (
-      <>
-        <Button variant='secondary' onClick={handleShow}>
+      <Container >
+
+        <Button variant='secondary' href='/admin/invoicecreate'>
           Add new invoice
         </Button>
-        <Modal show={show} onHide={handleClose} animation={false}>
+          <Modal show={show} onHide={handleClose} animation={false} style={{ display:'flex',overflowY: "auto", height:'50%'}} >
+            
           <Modal.Header closeButton>
             <Modal.Title>{detail === '' ? 'Add' : 'Edit'} Invoice</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <Form onSubmit={(e) => onSubmitHandler(e)} autoComplete='off'>
+          <Modal.Body style={{ textAlign:'center'}}>
+            <Form onSubmit={(e) => onSubmitHandler(e)} autoComplete='off' >
               {detail === '' ? (
                 <>
                   <Form.Group className='mb-3' controlId='formBasicEmail'>
@@ -285,8 +289,7 @@ export const AdminInvoiceList = () => {
                 Save Changes
               </Button> */}
           </Modal.Footer>
-        </Modal>
-
+          </Modal>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -347,7 +350,7 @@ export const AdminInvoiceList = () => {
             })}
           </tbody>
         </Table>
-      </>
+      </Container>
     );
   }
   return <>LOADING</>;
