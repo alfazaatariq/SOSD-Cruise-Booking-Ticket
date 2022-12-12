@@ -10,24 +10,43 @@ import { RiCheckboxBlankCircleFill } from 'react-icons/ri';
 import { PDFFile } from '../components/PDFFile';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import './invoice.css';
+import LoadingIcons from 'react-loading-icons';
 import Footer from '../components/Footer/Footer';
 
 export const InvoiceDetailPage = () => {
   const [invoice, setInvoice] = useState('');
   const [status, setStatus] = useState('');
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchInvoices() {
+      setLoading(true);
       const data = await getInvoiceByOrderId(id);
       setInvoice(data);
       const transaction_status = await getOrderStatus(id);
       setStatus(transaction_status);
+      setLoading(false);
     }
     fetchInvoices();
   }, []);
 
-  if (invoice) {
+  if (loading === true) {
+    return (
+      <>
+        <div
+          style={{
+            marginTop: '500px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <LoadingIcons.SpinningCircles stroke='#000000' speed={1} />
+        </div>
+      </>
+    );
+  } else if (invoice) {
     return (
       <>
         <Navbar />
@@ -122,5 +141,4 @@ export const InvoiceDetailPage = () => {
       </>
     );
   }
-  return <h1>LOADING</h1>;
 };

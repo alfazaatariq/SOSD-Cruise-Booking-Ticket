@@ -10,7 +10,12 @@ export const TicketList = () => {
   const { show } = useContext(ShowContext);
 
   if (show === false) {
-    return <div>Search for tickets now!</div>;
+    return (
+      <div style={{ textAlign: 'center' }}>
+        {' '}
+        <h1>Search For Tickets Now!</h1>{' '}
+      </div>
+    );
   } else {
     if (ticket) {
       return (
@@ -39,6 +44,11 @@ export const TicketList = () => {
         </div>
       );
     }
-    return <div>No tickets found!</div>;
+    return (
+      <div style={{ textAlign: 'center' }}>
+        {' '}
+        <h1>No Tickets Found!</h1>{' '}
+      </div>
+    );
   }
 };
