@@ -132,7 +132,7 @@ export const AdminInvoiceList = () => {
     return (
       <Container >
 
-        <Button variant='secondary' href='/admin/invoicecreate'>
+        <Button variant='secondary' onClick={handleShow}>
           Add new invoice
         </Button>
           <Modal show={show} onHide={handleClose} animation={false} style={{ display:'flex',overflowY: "auto", height:'50%'}} >
@@ -140,7 +140,7 @@ export const AdminInvoiceList = () => {
           <Modal.Header closeButton>
             <Modal.Title>{detail === '' ? 'Add' : 'Edit'} Invoice</Modal.Title>
           </Modal.Header>
-          <Modal.Body style={{ textAlign:'center'}}>
+          <Modal.Body>
             <Form onSubmit={(e) => onSubmitHandler(e)} autoComplete='off' >
               {detail === '' ? (
                 <>
