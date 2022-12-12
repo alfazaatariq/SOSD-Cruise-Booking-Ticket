@@ -41,11 +41,7 @@ export const AdminInvoiceList = () => {
   };
 
   const handleShow = (item) => {
-    if (item.type === 'click') {
-      setDetail('');
-    } else {
-      setDetail(item);
-    }
+    setDetail(item);
     setId(item._id);
     setUserId(item.user_id);
     setAsal(item.asal);
@@ -65,50 +61,26 @@ export const AdminInvoiceList = () => {
 
   async function onSubmitHandler(e) {
     e.preventDefault();
-    if (detail === '') {
-      const data = await adminAddInvoice(
-        userId,
-        asal,
-        tujuan,
-        tanggal,
-        waktuBerangkat,
-        waktuTiba,
-        harga,
-        nama,
-        no,
-        alamat,
-        jumlahTiket,
-        totalHarga,
-        orderId
-      );
-      console.log(data);
-      if (data.message === 'Invoice added successfully!') {
-        alert('Invoice added successfully!');
-        handleClose();
-        fetchInvoices();
-      }
-    } else {
-      const data = await updateInvoiceById(
-        id,
-        userId,
-        asal,
-        tujuan,
-        tanggal,
-        waktuBerangkat,
-        waktuTiba,
-        harga,
-        nama,
-        no,
-        alamat,
-        jumlahTiket,
-        totalHarga,
-        orderId
-      );
-      if (data.message === 'Invoice updated successfully!') {
-        alert('Invoice updated successfully!');
-        handleClose();
-        fetchInvoices();
-      }
+    const data = await updateInvoiceById(
+      id,
+      userId,
+      asal,
+      tujuan,
+      tanggal,
+      waktuBerangkat,
+      waktuTiba,
+      harga,
+      nama,
+      no,
+      alamat,
+      jumlahTiket,
+      totalHarga,
+      orderId
+    );
+    if (data.message === 'Invoice updated successfully!') {
+      alert('Invoice updated successfully!');
+      handleClose();
+      fetchInvoices();
     }
   }
 
@@ -131,44 +103,39 @@ export const AdminInvoiceList = () => {
       <>
         <Modal show={show} onHide={handleClose} animation={false}>
           <Modal.Header closeButton>
-            <Modal.Title>{detail === '' ? 'Add' : 'Edit'} Invoice</Modal.Title>
+            <Modal.Title>Edit Invoice</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={(e) => onSubmitHandler(e)} autoComplete='off'>
-              {detail === '' ? (
-                <>
-                  <Form.Group className='mb-3' controlId='formBasicEmail'>
-                    <Form.Label>ID</Form.Label>
-                    <Form.Control
-                      type='text'
-                      defaultValue={detail.user_id}
-                      onChange={(e) => setUserId(e.target.value)}
-                      required
-                    />
-                  </Form.Group>
-                  <Form.Group className='mb-3' controlId='formBasicEmail'>
-                    <Form.Label>Asal</Form.Label>
-                    <Form.Control
-                      type='text'
-                      defaultValue={detail.asal}
-                      onChange={(e) => setAsal(e.target.value)}
-                      required
-                    />
-                  </Form.Group>
-                </>
-              ) : (
-                <>
-                  <Form.Group className='mb-3' controlId='formBasicEmail'>
-                    <Form.Label>Asal</Form.Label>
-                    <Form.Control
-                      type='text'
-                      defaultValue={detail.asal}
-                      onChange={(e) => setAsal(e.target.value)}
-                      required
-                    />
-                  </Form.Group>
-                </>
-              )}
+              <Form.Group className='mb-3' controlId='formBasicEmail'>
+                <Form.Label>Order ID</Form.Label>
+                <Form.Control
+                  type='text'
+                  defaultValue={detail.order_id}
+                  onChange={(e) => setOrderId(e.target.value)}
+                  required
+                />
+              </Form.Group>
+
+              <Form.Group className='mb-3' controlId='formBasicEmail'>
+                <Form.Label>User ID</Form.Label>
+                <Form.Control
+                  type='text'
+                  defaultValue={detail.user_id}
+                  onChange={(e) => setUserId(e.target.value)}
+                  required
+                />
+              </Form.Group>
+
+              <Form.Group className='mb-3' controlId='formBasicEmail'>
+                <Form.Label>Asal</Form.Label>
+                <Form.Control
+                  type='text'
+                  defaultValue={detail.asal}
+                  onChange={(e) => setAsal(e.target.value)}
+                  required
+                />
+              </Form.Group>
 
               <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Label>Tujuan</Form.Label>
@@ -179,6 +146,7 @@ export const AdminInvoiceList = () => {
                   required
                 />
               </Form.Group>
+
               <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Label>Tanggal</Form.Label>
                 <Form.Control
@@ -188,6 +156,7 @@ export const AdminInvoiceList = () => {
                   required
                 />
               </Form.Group>
+
               <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Label>Waktu_berangkat</Form.Label>
                 <Form.Control
@@ -197,6 +166,7 @@ export const AdminInvoiceList = () => {
                   required
                 />
               </Form.Group>
+
               <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Label>waktu_tiba</Form.Label>
                 <Form.Control
@@ -206,15 +176,7 @@ export const AdminInvoiceList = () => {
                   required
                 />
               </Form.Group>
-              <Form.Group className='mb-3' controlId='formBasicEmail'>
-                <Form.Label>harga</Form.Label>
-                <Form.Control
-                  type='number'
-                  defaultValue={detail.harga}
-                  onChange={(e) => setHarga(e.target.value)}
-                  required
-                />
-              </Form.Group>
+
               <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Label>nama</Form.Label>
                 <Form.Control
@@ -224,6 +186,7 @@ export const AdminInvoiceList = () => {
                   required
                 />
               </Form.Group>
+
               <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Label>no</Form.Label>
                 <Form.Control
@@ -233,6 +196,7 @@ export const AdminInvoiceList = () => {
                   required
                 />
               </Form.Group>
+
               <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Label>alamat</Form.Label>
                 <Form.Control
@@ -242,6 +206,17 @@ export const AdminInvoiceList = () => {
                   required
                 />
               </Form.Group>
+
+              <Form.Group className='mb-3' controlId='formBasicEmail'>
+                <Form.Label>harga</Form.Label>
+                <Form.Control
+                  type='number'
+                  defaultValue={detail.harga}
+                  onChange={(e) => setHarga(e.target.value)}
+                  required
+                />
+              </Form.Group>
+
               <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Label>jumlah tiket</Form.Label>
                 <Form.Control
@@ -260,15 +235,7 @@ export const AdminInvoiceList = () => {
                   required
                 />
               </Form.Group>
-              <Form.Group className='mb-3' controlId='formBasicEmail'>
-                <Form.Label>order id</Form.Label>
-                <Form.Control
-                  type='text'
-                  defaultValue={detail.order_id}
-                  onChange={(e) => setOrderId(e.target.value)}
-                  required
-                />
-              </Form.Group>
+
               <Button variant='primary' type='submit'>
                 Submit
               </Button>
