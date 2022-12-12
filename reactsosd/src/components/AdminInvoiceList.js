@@ -129,9 +129,6 @@ export const AdminInvoiceList = () => {
   if (invoices) {
     return (
       <>
-        <Button variant='secondary' onClick={handleShow}>
-          Add new invoice
-        </Button>
         <Modal show={show} onHide={handleClose} animation={false}>
           <Modal.Header closeButton>
             <Modal.Title>{detail === '' ? 'Add' : 'Edit'} Invoice</Modal.Title>

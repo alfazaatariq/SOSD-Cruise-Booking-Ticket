@@ -69,7 +69,7 @@ export const AdminRegisterPage = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <Link to='/login' style={{ textDecoration: 'none' }}>
+            <Link to='/admin/login' style={{ textDecoration: 'none' }}>
               <Form.Text>Login</Form.Text>
             </Link>
           </Form.Group>

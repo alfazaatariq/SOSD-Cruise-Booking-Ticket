@@ -25,11 +25,6 @@ export const AdminPage = () => {
 
   return (
     <>
-      {/* <Navbar2>
-
-      </Navbar2> */}
-      {/* <Navbar2/> */}
-
       <div
         style={{
           backgroundImage: `url(${ship})`,
