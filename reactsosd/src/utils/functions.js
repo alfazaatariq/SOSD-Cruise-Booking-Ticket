@@ -128,7 +128,6 @@ export const getTicketsByForm = async (asal, tujuan, tanggal) => {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
-          // Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2FtYW4gQnJlbWJvIiwiaWF0IjoxNjY5ODgyNDgyLCJleHAiOjE2Njk4ODk2ODJ9.ZKC9bvoxBjy2UREbTsp4vscjgsdM6sh9QE6Gv-ozgc8`, // notice the Bearer before your token
         },
         body: JSON.stringify(payLoad),
       }
@@ -151,7 +150,6 @@ export const getTujuan = async (asal) => {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
-          // Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2FtYW4gQnJlbWJvIiwiaWF0IjoxNjY5ODgyNDgyLCJleHAiOjE2Njk4ODk2ODJ9.ZKC9bvoxBjy2UREbTsp4vscjgsdM6sh9QE6Gv-ozgc8`, // notice the Bearer before your token
         },
         body: JSON.stringify(payLoad),
       }

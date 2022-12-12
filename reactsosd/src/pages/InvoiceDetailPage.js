@@ -1,10 +1,6 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
-import {
-  getInvoiceByOrderId,
-  getInvoiceByUserId,
-  getOrderStatus,
-} from '../utils/functions';
+import { getInvoiceByOrderId, getOrderStatus } from '../utils/functions';
 import { useParams } from 'react-router-dom';
 import { RiCheckboxBlankCircleFill } from 'react-icons/ri';
 import { PDFFile } from '../components/PDFFile';
@@ -93,30 +89,21 @@ export const InvoiceDetailPage = () => {
                   document={<PDFFile invoice={invoice} />}
                   fileName={`Tiket-${invoice[0].order_id}`}
                 >
-                  {
-                    status.transaction_status !== 'settlement'
-                      ? ({ loading }) =>
-                          loading ? (
-                            <button disabled>Loading...</button>
-                          ) : (
-                            <button disabled className='btnIDP'>
-                              Complete The payment to download the ticket
-                            </button>
-                          )
-                      : ({ loading }) =>
-                          loading ? (
-                            <button>Loading...</button>
-                          ) : (
-                            <button className='btnIDP'>Download</button>
-                          )
-
-                    // ({ loading }) =>
-                    //   loading ? (
-                    //     <button>Loading...</button>
-                    //   ) : (
-                    //     <button className='btnIDP'>Download</button>
-                    //   )
-                  }
+                  {status.transaction_status !== 'settlement'
+                    ? ({ loading }) =>
+                        loading ? (
+                          <button disabled>Loading...</button>
+                        ) : (
+                          <button disabled className='btnIDP'>
+                            Complete The payment to download the ticket
+                          </button>
+                        )
+                    : ({ loading }) =>
+                        loading ? (
+                          <button>Loading...</button>
+                        ) : (
+                          <button className='btnIDP'>Download</button>
+                        )}
                 </PDFDownloadLink>
               </td>
               <td className='tdIDP'>

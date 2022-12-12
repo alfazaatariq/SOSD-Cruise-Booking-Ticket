@@ -1,10 +1,9 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { createContext, useEffect, useState, React } from 'react';
 import HomePage from './pages/HomePage';
 import FormPage from './pages/FormPage';
 import { getAllTicket } from './utils/functions';
 import PaymentPage from './pages/PaymentPage';
-import { OrderPage } from './pages/OrderPage';
 import { AboutPage } from './pages/AboutPage';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
@@ -15,7 +14,6 @@ import { AdminLoginPage } from './pages/AdminLoginPage';
 import { AdminRegisterPage } from './pages/AdminRegisterPage';
 import './app.css';
 import ErrorBoundary from './components/ErrorBoundary';
-import { ErrorPage } from './pages/ErrorPage';
 
 export const DataContext = createContext();
 
