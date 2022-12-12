@@ -50,6 +50,10 @@ export const InvoiceDetailPage = () => {
           <div className='textIDP'>
             <h1 className='h1IDP'>INVOICE DETAIL</h1>
             <h1 className='h1IDP2'>VA Number : {status.permata_va_number}</h1>
+            <h1 className='h1IDP2'>
+              simulasi pembayaran :
+              https://simulator.sandbox.midtrans.com/permata/va/index
+            </h1>
           </div>
 
           <table className='tableIDP'>

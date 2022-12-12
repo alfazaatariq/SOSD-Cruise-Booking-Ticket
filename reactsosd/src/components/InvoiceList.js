@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { getInvoiceByUserId } from '../utils/functions';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import './invoicelist.css';
 import { InvoiceContext } from '../pages/HistoryPage';
 
 export const InvoiceList = () => {
-  const { invoices, setInvoices } = useContext(InvoiceContext);
+  const { invoices } = useContext(InvoiceContext);
 
   if (invoices) {
     return (
