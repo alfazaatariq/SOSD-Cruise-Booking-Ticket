@@ -8,12 +8,15 @@ import { PDFDownloadLink } from '@react-pdf/renderer';
 import './invoice.css';
 import LoadingIcons from 'react-loading-icons';
 import Footer from '../components/Footer/Footer';
+import { Timer } from '../components/Timer';
 
 export const InvoiceDetailPage = () => {
   const [invoice, setInvoice] = useState('');
   const [status, setStatus] = useState('');
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
+  const [exp, setExp] = useState('');
+  const time = new Date(exp);
 
   useEffect(() => {
     async function fetchInvoices() {
@@ -22,6 +25,8 @@ export const InvoiceDetailPage = () => {
       setInvoice(data);
       const transaction_status = await getOrderStatus(id);
       setStatus(transaction_status);
+      let expTime = transaction_status.expire_time;
+      setExp(expTime);
       setLoading(false);
     }
     fetchInvoices();
@@ -50,6 +55,14 @@ export const InvoiceDetailPage = () => {
           <div className='textIDP'>
             <h1 className='h1IDP'>INVOICE DETAIL</h1>
             <h1 className='h1IDP2'>VA Number : {status.permata_va_number}</h1>
+            {status.transaction_status === 'pending' ? (
+              <h1 className='h1IDP2'>
+                Expired : <Timer expiryTimestamp={time} />{' '}
+              </h1>
+            ) : (
+              <></>
+            )}
+
             <h1 className='h1IDP2'>
               simulasi pembayaran :
               https://simulator.sandbox.midtrans.com/permata/va/index
