@@ -25,36 +25,45 @@ export const AdminLoginPage = () => {
 
   return (
     <>
-      <Container style={{ width: '25%', marginTop: '5rem' }}>
-        <h1>Login Admin</h1>
-        <Form onSubmit={(e) => onSubmitHandler(e)}>
-          <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='Enter email'
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </Form.Group>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: '50px',
+        }}
+      >
+        <Container>
+          <h1>Login Admin</h1>
+          <Form onSubmit={(e) => onSubmitHandler(e)}>
+            <Form.Group className='mb-3' controlId='formBasicEmail'>
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type='email'
+                placeholder='Enter email'
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className='mb-3' controlId='formBasicPassword'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Password'
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <Link to='/admin/register' style={{ textDecoration: 'none' }}>
-              <Form.Text>Register</Form.Text>
-            </Link>
-          </Form.Group>
-          <Button variant='primary' type='submit'>
-            Submit
-          </Button>
-        </Form>
-      </Container>
+            <Form.Group className='mb-3' controlId='formBasicPassword'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type='password'
+                placeholder='Password'
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <Link to='/admin/register' style={{ textDecoration: 'none' }}>
+                <Form.Text>Register</Form.Text>
+              </Link>
+            </Form.Group>
+            <Button variant='primary' type='submit'>
+              Submit
+            </Button>
+          </Form>
+        </Container>
+      </div>
     </>
   );
 };
