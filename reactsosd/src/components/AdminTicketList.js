@@ -185,6 +185,7 @@ export const AdminTicketList = () => {
                   type='number'
                   defaultValue={detail.harga}
                   onChange={(e) => setHarga(e.target.value)}
+                  min='1'
                   required
                 />
               </Form.Group>
@@ -197,9 +198,6 @@ export const AdminTicketList = () => {
             <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>
-            {/* <Button variant='primary' onClick={handleClose}>
-              Save Changes
-            </Button> */}
           </Modal.Footer>
         </Modal>
 
