@@ -30,11 +30,7 @@ export const RegisterPage = () => {
           <img src={photo}></img>
         </div>
 
-        <section
-          data-aos='fade-up'
-          onSubmit={(e) => onSubmitHandler(e)}
-          class='container2'
-        >
+        <section onSubmit={(e) => onSubmitHandler(e)} class='container2'>
           <header>Register</header>
           <form action='#' class='form'>
             <div class='input-box'>
