@@ -4,6 +4,7 @@ const midtransClient = require('midtrans-client');
 // Create Core API instance
 let coreApi = new midtransClient.CoreApi({
   isProduction: false,
+  // UNTUK SERVER & CLIENT KEY, BISA DILIAT DI SETTINGS AKUN MIDTRANS PRIBADI. HAL INI DILAKUKAN UNTUK MELIHAT HISTORY PEMBAYARAN
   serverKey: 'SB-Mid-server-_OG2A-cUlUW-2USRfEI6I2CN',
   clientKey: 'SB-Mid-client-CwRTNC3Rv-adJVWm',
 });
