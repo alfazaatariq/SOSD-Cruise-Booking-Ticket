@@ -15,6 +15,10 @@ export const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   async function onSubmitHandler(e) {
     e.preventDefault();
     const data = await loginUser(email, password);
@@ -26,10 +30,6 @@ export const LoginPage = () => {
       alert('Your email/password is wrong!');
     }
   }
-
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
 
   return (
     <>
