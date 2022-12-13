@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 200,
+    margin: '0 auto',
   },
   header: {
     fontSize: 12,

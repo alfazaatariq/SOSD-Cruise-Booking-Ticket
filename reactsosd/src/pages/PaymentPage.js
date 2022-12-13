@@ -57,7 +57,10 @@ const PaymentPage = () => {
                   <FaMoneyBillWave className='icon' />
                   <h2>Pilih Bank :</h2>
                   <div className='opsi'>
-                    <img src={img3}></img>
+                    <label htmlFor='permata'>
+                      <img src={img3} style={{ width: '250px' }}></img>
+                    </label>
+
                     <input
                       className='radioBtn'
                       type='radio'
