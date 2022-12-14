@@ -13,7 +13,14 @@ const AuthCustomerRoute = require('./routes/authCustomer');
 const InvoiceRoute = require('./routes/invoice');
 const OrderRoute = require('./routes/order');
 
-mongoose.connect('mongodb://localhost:27017/testdb', {
+// LOCAL (mongodbcompass)
+// mongoose.connect('mongodb://localhost:27017/testdb', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+// CLOUD
+mongoose.connect('mongodb+srv://sosd:sosd@sosd.knplpfr.mongodb.net/sosd', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
